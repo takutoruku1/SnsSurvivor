@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useGameStore } from '../store/gameStore'
+import { assetPath } from '../utils/assetPath'
 
 interface Props {
   variant: 'gameover' | 'clear'
 }
 
 const ENDING_IMG = {
-  gameover: '/characters/menhera_gameover.png',
-  clear: '/characters/menhera_happy.png',
+  gameover: assetPath('characters/menhera_gameover.png'),
+  clear: assetPath('characters/menhera_happy.png'),
 }
 
 const ENDING_EMOJI = {

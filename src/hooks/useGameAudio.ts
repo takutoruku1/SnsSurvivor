@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useGameStore } from '../store/gameStore'
 import { useAudioStore } from '../store/audioStore'
+import { assetPath } from '../utils/assetPath'
 import type { GameStatus } from '../types'
 
 interface TrackCfg {
@@ -9,10 +10,10 @@ interface TrackCfg {
 }
 
 const TRACKS: Record<GameStatus, TrackCfg | null> = {
-  title: { src: '/audio/bgm_title.mp3', loop: true },
-  playing: { src: '/audio/bgm_play.mp3', loop: true },
-  gameover: { src: '/audio/bgm_gameover.mp3', loop: false },
-  clear: { src: '/audio/bgm_clear.mp3', loop: false },
+  title: { src: assetPath('audio/bgm_title.mp3'), loop: true },
+  playing: { src: assetPath('audio/bgm_play.mp3'), loop: true },
+  gameover: { src: assetPath('audio/bgm_gameover.mp3'), loop: false },
+  clear: { src: assetPath('audio/bgm_clear.mp3'), loop: false },
 }
 
 export function useGameAudio() {

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useGameStore, getEmotion } from '../store/gameStore'
+import { assetPath } from '../utils/assetPath'
 
 const EMOTION_IMG: Record<'happy' | 'normal' | 'sad' | 'gameover', string> = {
-  happy: '/characters/menhera_happy.png',
-  normal: '/characters/menhera_normal.png',
-  sad: '/characters/menhera_sad.png',
-  gameover: '/characters/menhera_gameover.png',
+  happy: assetPath('characters/menhera_happy.png'),
+  normal: assetPath('characters/menhera_normal.png'),
+  sad: assetPath('characters/menhera_sad.png'),
+  gameover: assetPath('characters/menhera_gameover.png'),
 }
 
 const EMOTION_EMOJI: Record<'happy' | 'normal' | 'sad' | 'gameover', string> = {

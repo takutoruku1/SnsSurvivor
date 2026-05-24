@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // GitHub Pagesではリポジトリ名のサブパス配下になるので本番ビルドのみbaseを指定
+  base: command === 'build' ? '/SnsSurvivor/' : '/',
   plugins: [react(), tailwindcss()],
   server: {
     watch: {
@@ -16,4 +18,4 @@ export default defineConfig({
       ],
     },
   },
-})
+}))
